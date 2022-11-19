@@ -12,7 +12,10 @@
     "NullNews Tech Gadges Science More . theme language signUp";
 }
 
-.NullNews { grid-area: NullNews; }
+.NullNews {
+    grid-area: NullNews;
+    margin-right: 4vmin;
+}
 .Tech { grid-area: Tech; }
 .Gadges { grid-area: Gadges; }
 .Science { grid-area: Science; }

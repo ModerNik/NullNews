@@ -7,9 +7,10 @@ export const NavBar = () => {
             <a href="/tech" className="Tech">Tech</a>
             <a href="/gadgets" className="Gadgets">Gadgets</a>
             <a href="/" className="Science">Science</a>
-            <a href="/" className="More">More<span className="material-symbols-outlined">
-                expand_more
-            </span></a>
+            <a href="/" className="More">
+                More
+                <span className="material-symbols-outlined">expand_more</span>
+            </a>
             <a className="theme">
                 <span className="material-symbols-outlined"> light_mode </span>
             </a>
