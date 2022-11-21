@@ -6,8 +6,8 @@ export const NavBar = () => {
             <a href="/" className="NullNews">Null News</a>
             <a href="/tech" className="Tech">Tech</a>
             <a href="/gadgets" className="Gadgets">Gadgets</a>
-            <a href="/" className="Science">Science</a>
-            <a href="/" className="More">
+            <a href="/science" className="Science">Science</a>
+            <a href="/more" className="More">
                 More
                 <span className="material-symbols-outlined">expand_more</span>
             </a>
@@ -21,3 +21,5 @@ export const NavBar = () => {
         </div>
     )
 }
+
+export default NavBar;

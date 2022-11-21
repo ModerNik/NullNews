@@ -1,0 +1,9 @@
+.body {
+    margin-left: 10vmin;
+    margin-right: 10vmin;
+    width: calc(100vw - 20vmin);
+}
+
+.cards {
+    
+}

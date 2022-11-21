@@ -1,0 +1,18 @@
+.card {
+    display: flex;
+    width: 60vmin;
+    padding: 64px;
+    justify-content: space-between;
+}
+
+.cardText {
+    margin-left: 64px;
+}
+
+.cardImage {
+    width: 264px;
+    height: 161px;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-right: 64px;
+}

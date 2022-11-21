@@ -1,9 +1,13 @@
 import React from 'react';
+import CardArticle from '../../components/CardArticle/CardArticle';
+import './Home.css'
 
 export const Home = () => {
     return (
-        <div>
-            <h1>Home</h1>
+        <div className='body'>
+            <div className='cards'>
+                <CardArticle />
+            </div>
         </div>
     )
 }
