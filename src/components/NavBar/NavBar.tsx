@@ -1,24 +1,28 @@
 import "./NavBar.css"
+import * as React from 'react';
+import { Box, IconButton, Button, useTheme, Typography } from '@mui/material';
+import { ColorModeContext } from '../../App';
+import { LightModeOutlined } from "@mui/icons-material";
+import { DarkModeOutlined } from "@mui/icons-material";
+
 
 export const NavBar = () => {
+    const colorMode = React.useContext(ColorModeContext);
+
     return (
-        <div className='navbar'>
-            <a href="/" className="NullNews">Null News</a>
+        <Box className='navbar'>
+            <a href="/" className="NullNews"><Typography>Null News</Typography></a>
             <a href="/tech" className="Tech">Tech</a>
             <a href="/gadgets" className="Gadgets">Gadgets</a>
             <a href="/science" className="Science">Science</a>
-            <a href="/more" className="More">
-                More
-                <span className="material-symbols-outlined">expand_more</span>
-            </a>
-            <a className="theme">
-                <span className="material-symbols-outlined"> light_mode </span>
-            </a>
-            <a className="language">
-                <span className="material-symbols-outlined"> language </span>
-            </a>
-            <button className="signUp">Sign up</button>
-        </div>
+            <a href="/more" className="More">More</a>
+            <Box>
+                <IconButton onClick={colorMode.toggleColorMode}>
+                    {useTheme().palette.mode === 'light' ? <LightModeOutlined /> : <DarkModeOutlined />}
+                </IconButton>
+                <button className="signUp">Sign up</button>
+            </Box>
+        </Box>
     )
 }
 
