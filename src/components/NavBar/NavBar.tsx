@@ -47,7 +47,6 @@ const useStyles = createStyles((theme) => ({
         textDecoration: 'none',
         color: theme.colorScheme === 'dark' ? theme.white : theme.black,
         fontWeight: 500,
-        fontSize: theme.fontSizes.sm,
 
         [theme.fn.smallerThan('sm')]: {
             height: 42,
@@ -135,7 +134,7 @@ const mockdata = [
     },
     {
         icon: IconBusinessplan,
-        title: 'Buisness',
+        title: 'Business',
         description: 'News from buisness world',
     },
     {
@@ -236,7 +235,7 @@ export const NavBar = () => {
                         <ActionIcon onClick={() => toggleColorScheme()}>
                             {theme.colorScheme === 'light' ? <IconSun /> : <IconMoon />}
                         </ActionIcon>
-                        <Button>Sign up</Button>
+                        <Link to="login"><Button>Sign up</Button></Link>
                     </Group>
 
                     <Burger opened={drawerOpened} onClick={toggleDrawer} className={classes.hiddenDesktop} />
@@ -248,7 +247,7 @@ export const NavBar = () => {
                 onClose={closeDrawer}
                 size="100%"
                 padding="md"
-                title="Navigation"
+                title="Null News"
                 className={classes.hiddenDesktop}
                 zIndex={1000000}
             >

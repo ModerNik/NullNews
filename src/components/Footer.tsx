@@ -1,4 +1,4 @@
-import { createStyles, Anchor, Group, ActionIcon, Title } from '@mantine/core';
+import { createStyles, Anchor, Group, ActionIcon, Title, Text } from '@mantine/core';
 import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons';
 import { Link } from 'react-router-dom';
 
@@ -32,7 +32,12 @@ const useStyles = createStyles((theme) => ({
         ...theme.fn.hover({
             textDecoration: 'underline',
         }),
-    }
+    },
+    text: {
+        ...theme.fn.hover({
+            textDecoration: 'underline',
+        }),
+    },
 }));
 
 const links = [
@@ -44,8 +49,10 @@ const links = [
 export const Footer = () => {
     const { classes } = useStyles();
     const items = links.map((link) => (
-        <Link className={classes.link} key={link.label} to={link.link}>
-            {link.label}
+        <Link key={link.label} to={link.link}>
+            <Text color='dimmed' className={classes.text}>
+                {link.label}
+            </Text>
         </Link>
     ));
 
@@ -58,7 +65,9 @@ export const Footer = () => {
 
                 <Group className={classes.links}>
                     {items}
-                    <a className={classes.link} href="https://github.com/ModerNik" target="_blank">Contribute</a>
+                    <Anchor<'a'> href="https://github.com/ModerNik" target="_blank" color="dimmed">
+                        Contribute
+                    </Anchor>
                 </Group>
 
                 <Group spacing="xs" position="right" noWrap>
