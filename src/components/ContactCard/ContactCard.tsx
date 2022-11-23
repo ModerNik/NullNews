@@ -1,5 +1,5 @@
-import { createStyles, Avatar, Text, Group, Box, Paper } from '@mantine/core';
-import { IconPhoneCall, IconAt } from '@tabler/icons';
+import { createStyles, Avatar, Text, Group, Box, Paper, Anchor } from '@mantine/core';
+import { IconBrandGithub, IconAt } from '@tabler/icons';
 
 const useStyles = createStyles((theme) => ({
     icon: {
@@ -15,11 +15,11 @@ interface ContactCardProps {
     avatar: string;
     name: string;
     title: string;
-    phone: string;
     email: string;
+    github: string;
 }
 
-export default function ContactCard({ avatar, name, title, phone, email }: ContactCardProps) {
+export default function ContactCard({ avatar, name, title, email, github }: ContactCardProps) {
     const { classes } = useStyles();
     return (
         <Paper withBorder shadow="md" p={30} radius="md" mt="xl"
@@ -27,7 +27,7 @@ export default function ContactCard({ avatar, name, title, phone, email }: Conta
                 padding: theme.spacing.xl,
                 justifyContent: 'center',
                 maxWidth: 400,
-                minWidth: 'max-content',
+                minWidth: 320,
             })}>
             <Group noWrap>
                 <Avatar src={avatar} size={94} radius="md" />
@@ -48,10 +48,10 @@ export default function ContactCard({ avatar, name, title, phone, email }: Conta
                     </Group>
 
                     <Group noWrap spacing={10} mt={5}>
-                        <IconPhoneCall stroke={1.5} size={16} className={classes.icon} />
-                        <Text size="xs" color="dimmed">
-                            {phone}
-                        </Text>
+                        <IconBrandGithub stroke={1.5} size={16} className={classes.icon} />
+                        <Anchor<'a'> href={'https://'+github} target="_blank" size="xs" color="dimmed">
+                            {github}
+                        </Anchor>
                     </Group>
                 </div>
             </Group>

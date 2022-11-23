@@ -2,11 +2,12 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { useState, useEffect, createContext } from 'react';
 import { Home } from './pages/Home/Home'
 import { NotFound } from './pages/NotFound/NotFound'
-import { NavBar } from './components/NavBar/NavBar'
+import { NavBar } from './components/NavBar'
 import { Footer } from './components/Footer'
 import { Login } from './components/Login/Login'
 import { useLocalStorage, useColorScheme } from "@mantine/hooks";
 import {
+    Box,
     ColorScheme,
     ColorSchemeProvider,
     MantineProvider,
@@ -56,14 +57,15 @@ function App() {
             <MantineProvider theme={MainTheme} withGlobalStyles withNormalizeCSS>
                 <BrowserRouter>
                     <NavBar />
-                    <Routes>
-                        <Route index element={<Home />} />
-                        <Route path="login" element={<Login />} />
-                        <Route path="forgot" element={<ForgotPassword />} />
-                        <Route path="contact" element={<Contact />} />
-                        <Route path="*" element={<NotFound />} />
-                    </Routes>
-                    <Outlet />
+                    <Box sx={{ minHeight: 'calc(100vh - 300px)' }}>
+                        <Routes>
+                            <Route index element={<Home />} />
+                            <Route path="login" element={<Login />} />
+                            <Route path="forgot" element={<ForgotPassword />} />
+                            <Route path="contact" element={<Contact />} />
+                            <Route path="*" element={<NotFound />} />
+                        </Routes>
+                    </Box>
                     <Footer />
                 </BrowserRouter>
             </MantineProvider>

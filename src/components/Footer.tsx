@@ -1,14 +1,12 @@
 import { createStyles, Anchor, Group, ActionIcon, Title, Text } from '@mantine/core';
-import { useViewportSize } from '@mantine/hooks';
 import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons';
 import { Link } from 'react-router-dom';
 
-const { height, width } = useViewportSize();
-
 const useStyles = createStyles((theme) => ({
     footer: {
+        height: 60,
         bottom: 0,
-        marginTop: 40,
+        marginTop: 100,
         width: '100%',
         borderTop: `1px solid ${theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2]}`,
     },
