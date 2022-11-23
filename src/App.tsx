@@ -15,6 +15,7 @@ import {
 
 // import MainTheme from './theme';
 import { ForgotPassword } from './components/Login/ForgotPassword';
+import { Contact } from "./pages/Contact/Contact";
 // export const ColorSchemeContext = createContext({} as ColorScheme);
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
                         <Route index element={<Home />} />
                         <Route path="login" element={<Login />} />
                         <Route path="forgot" element={<ForgotPassword />} />
+                        <Route path="contact" element={<Contact />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                     <Outlet />
