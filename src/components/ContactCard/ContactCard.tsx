@@ -22,10 +22,8 @@ interface ContactCardProps {
 export default function ContactCard({ avatar, name, title, email, github }: ContactCardProps) {
     const { classes } = useStyles();
     return (
-        <Paper withBorder shadow="md" p={30} radius="md" mt="xl"
+        <Paper withBorder shadow="md" p={30} radius="md" mb="xl"
             sx={(theme) => ({
-                padding: theme.spacing.xl,
-                justifyContent: 'center',
                 maxWidth: 400,
                 minWidth: 320,
             })}>
@@ -49,7 +47,7 @@ export default function ContactCard({ avatar, name, title, email, github }: Cont
 
                     <Group noWrap spacing={10} mt={5}>
                         <IconBrandGithub stroke={1.5} size={16} className={classes.icon} />
-                        <Anchor<'a'> href={'https://'+github} target="_blank" size="xs" color="dimmed">
+                        <Anchor<'a'> href={'https://' + github} target="_blank" size="xs" color="dimmed">
                             {github}
                         </Anchor>
                     </Group>

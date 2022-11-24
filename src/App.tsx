@@ -57,15 +57,13 @@ function App() {
             <MantineProvider theme={MainTheme} withGlobalStyles withNormalizeCSS>
                 <BrowserRouter>
                     <NavBar />
-                    <Box sx={{ minHeight: 'calc(100vh - 300px)' }}>
-                        <Routes>
-                            <Route index element={<Home />} />
-                            <Route path="login" element={<Login />} />
-                            <Route path="forgot" element={<ForgotPassword />} />
-                            <Route path="contact" element={<Contact />} />
-                            <Route path="*" element={<NotFound />} />
-                        </Routes>
-                    </Box>
+                    <Routes>
+                        <Route index element={<Home />} />
+                        <Route path="login" element={<Login />} />
+                        <Route path="forgot" element={<ForgotPassword />} />
+                        <Route path="contact" element={<Contact />} />
+                        <Route path="*" element={<NotFound />} />
+                    </Routes>
                     <Footer />
                 </BrowserRouter>
             </MantineProvider>

@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom';
 
 const useStyles = createStyles((theme) => ({
     footer: {
-        height: 60,
+        height: 70,
         bottom: 0,
         marginTop: 100,
         width: '100%',
         borderTop: `1px solid ${theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2]}`,
+        zIndex: -1,
+        flex: 0,
     },
 
     inner: {

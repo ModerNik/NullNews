@@ -1,11 +1,32 @@
-import { Box, createStyles } from '@mantine/core';
+import { Box, Button, createStyles, Group, Textarea, TextInput } from '@mantine/core';
 import ContactCard from '../../components/ContactCard/ContactCard'
 
 const useStyles = createStyles((theme) => ({
-    contactBox: {
-        justifyContent: 'right',
+    form: {
+        border: `1px solid ${theme.colorScheme === 'dark' ? theme.colors.gray[8] : theme.colors.gray[3]}`,
+        padding: theme.spacing.xl,
+        borderRadius: theme.radius.md,
+        maxWidth: 400,
+        minWidth: 320,
+        marginLeft: theme.spacing.xl,
+        [theme.fn.smallerThan('sm')]: {
+            flexDirection: 'column',
+            marginLeft: 0,
+        },
     },
 
+    control: {
+        backgroundColor: theme.colors[theme.primaryColor][6],
+    },
+
+    contactBox: {
+        display: 'flex',
+        justifyContent: 'center',
+        [theme.fn.smallerThan('sm')]: {
+            flexDirection: 'column',
+            marginRight: theme.spacing.xl,
+        },
+    },
 }));
 
 const contacts = [
@@ -31,8 +52,33 @@ export const Contact = () => {
     ));
 
     return (
-        <Box pl={40} pr={40}>
-            {contact}
+        <Box pl={40} className={classes.contactBox}>
+            <Box>
+                {contact}
+            </Box>
+            <div className={classes.form}>
+                <TextInput
+                    label="Email"
+                    placeholder="your@email.com"
+                    required
+                />
+                <TextInput
+                    label="Name"
+                    placeholder="John Doe"
+                    mt="md"
+                />
+                <Textarea
+                    required
+                    label="Your message"
+                    placeholder="I want to order your goods"
+                    minRows={4}
+                    mt="md"
+                />
+
+                <Group position="right" mt="md">
+                    <Button className={classes.control}>Send message</Button>
+                </Group>
+            </div>
         </Box>
     )
 }

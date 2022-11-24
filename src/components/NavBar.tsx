@@ -173,9 +173,11 @@ export const NavBar = () => {
             <Header className={classes.navBarBox} height={60} px="md" >
                 <Group position="apart" sx={{ height: '100%' }}>
                     <Group sx={{ height: '100%' }} spacing={0}>
-                        <Title className={classes.title} order={4}>
-                            Null News
-                        </Title>
+                        <Link to='/'>
+                            <Title className={classes.title} order={4}>
+                                Null News
+                            </Title>
+                        </Link>
                     </Group>
                     <Group sx={{ height: '100%' }} spacing={0} className={classes.hiddenMobile}>
                         <Link to="latest" className={classes.link}>
