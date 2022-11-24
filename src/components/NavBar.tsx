@@ -34,6 +34,8 @@ import {
     IconBusinessplan,
     IconSun,
     IconMoon,
+    IconHeart,
+    IconBookmarks
 } from '@tabler/icons';
 import { Link } from "react-router-dom";
 
@@ -169,7 +171,7 @@ export const NavBar = () => {
     ));
 
     return (
-        <Box pb={100}>
+        <Box pb={100} >
             <Header className={classes.navBarBox} height={60} px="md" >
                 <Group position="apart" sx={{ height: '100%' }}>
                     <Group sx={{ height: '100%' }} spacing={0}>

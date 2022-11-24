@@ -5,10 +5,6 @@ const useStyles = createStyles((theme) => ({
     icon: {
         color: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[5],
     },
-
-    name: {
-        fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    },
 }));
 
 interface ContactCardProps {
@@ -34,7 +30,7 @@ export default function ContactCard({ avatar, name, title, email, github }: Cont
                         {title}
                     </Text>
 
-                    <Text size="lg" weight={500} className={classes.name}>
+                    <Text size="lg" weight={500}>
                         {name}
                     </Text>
 

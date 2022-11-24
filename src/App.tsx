@@ -1,11 +1,15 @@
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { useState, useEffect, createContext } from 'react';
-import { Home } from './pages/Home/Home'
-import { NotFound } from './pages/NotFound/NotFound'
+
+import GlobalStyles from "./GlobalStyles";
+import AppRoutes from "./Routes";
 import { NavBar } from './components/NavBar'
 import { Footer } from './components/Footer'
-import { Login } from './components/Login/Login'
+import { ForgotPassword } from './components/Login/ForgotPassword';
+import { Contact } from "./pages/Contact/Contact";
+
 import { useLocalStorage, useColorScheme } from "@mantine/hooks";
+import { NotificationsProvider } from '@mantine/notifications';
 import {
     Box,
     ColorScheme,
@@ -14,10 +18,6 @@ import {
     MantineThemeOverride
 } from '@mantine/core';
 
-// import MainTheme from './theme';
-import { ForgotPassword } from './components/Login/ForgotPassword';
-import { Contact } from "./pages/Contact/Contact";
-// export const ColorSchemeContext = createContext({} as ColorScheme);
 
 function App() {
     const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
@@ -55,17 +55,14 @@ function App() {
     return (
         <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
             <MantineProvider theme={MainTheme} withGlobalStyles withNormalizeCSS>
-                <BrowserRouter>
-                    <NavBar />
-                    <Routes>
-                        <Route index element={<Home />} />
-                        <Route path="login" element={<Login />} />
-                        <Route path="forgot" element={<ForgotPassword />} />
-                        <Route path="contact" element={<Contact />} />
-                        <Route path="*" element={<NotFound />} />
-                    </Routes>
-                    <Footer />
-                </BrowserRouter>
+                <GlobalStyles />
+                <NotificationsProvider>
+                    <BrowserRouter>
+                        <NavBar />
+                        <AppRoutes />
+                        <Footer />
+                    </BrowserRouter>
+                </NotificationsProvider>
             </MantineProvider>
         </ColorSchemeProvider>
     )

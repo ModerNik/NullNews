@@ -1,5 +1,5 @@
 import { Box, Button, createStyles, Group, Textarea, TextInput } from '@mantine/core';
-import ContactCard from '../../components/ContactCard/ContactCard'
+import ContactCard from '../../components/ContactCard'
 
 const useStyles = createStyles((theme) => ({
     form: {
