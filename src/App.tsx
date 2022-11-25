@@ -9,7 +9,7 @@ import { ForgotPassword } from './components/Login/ForgotPassword';
 import { Contact } from "./pages/Contact/Contact";
 
 import { useLocalStorage, useColorScheme } from "@mantine/hooks";
-import { NotificationsProvider } from '@mantine/notifications';
+import { NotificationsProvider, showNotification } from '@mantine/notifications';
 import {
     Box,
     ColorScheme,
@@ -17,9 +17,21 @@ import {
     MantineProvider,
     MantineThemeOverride
 } from '@mantine/core';
-
+import { IconAlertTriangle } from "@tabler/icons";
 
 function App() {
+    useEffect(() => {
+        showNotification(
+            {
+                title: 'WORK IN PROGRESS',
+                message: 'This site is still under construction. Most features aren`t working yet. You can contact the developers at the Contact page.',
+                color: 'yellow',
+                icon: <IconAlertTriangle/>,
+                autoClose: 5000,
+            },
+        )
+    }, []);
+
     const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
         key: 'colorScheme',
         defaultValue: useColorScheme(),
