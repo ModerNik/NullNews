@@ -23,8 +23,7 @@ import { Link } from 'react-router-dom';
 const useStyles = createStyles((theme) => ({
 
     form: {
-        borderRight: `1px solid ${theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[3]
-            }`,
+        borderRight: `1px solid ${theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[3]}`,
         minHeight: 900,
         maxWidth: 450,
         paddingTop: 80,
