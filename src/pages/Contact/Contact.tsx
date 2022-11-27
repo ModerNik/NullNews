@@ -7,7 +7,7 @@ const useStyles = createStyles((theme) => ({
         padding: theme.spacing.xl,
         borderRadius: theme.radius.md,
         maxWidth: 400,
-        minWidth: 320,
+        width: '100%',
         marginLeft: theme.spacing.xl,
         [theme.fn.smallerThan('sm')]: {
             flexDirection: 'column',
@@ -22,9 +22,9 @@ const useStyles = createStyles((theme) => ({
     contactBox: {
         display: 'flex',
         justifyContent: 'center',
+        padding: theme.spacing.xl,
         [theme.fn.smallerThan('sm')]: {
             flexDirection: 'column',
-            marginRight: theme.spacing.xl,
         },
     },
 }));
@@ -64,13 +64,13 @@ export const Contact = () => {
                 />
                 <TextInput
                     label="Name"
-                    placeholder="John Doe"
+                    placeholder="Your Name"
                     mt="md"
                 />
                 <Textarea
                     required
                     label="Your message"
-                    placeholder="I want to order your goods"
+                    placeholder="Your app sucks xd"
                     minRows={4}
                     mt="md"
                 />

@@ -69,7 +69,7 @@ function App() {
             <MantineProvider theme={MainTheme} withGlobalStyles withNormalizeCSS>
                 <GlobalStyles />
                 <NotificationsProvider>
-                    <BrowserRouter>
+                    <BrowserRouter basename={`/NullNews`}>
                         <NavBar />
                         <AppRoutes />
                         <Footer />

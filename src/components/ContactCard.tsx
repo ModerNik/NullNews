@@ -5,6 +5,12 @@ const useStyles = createStyles((theme) => ({
     icon: {
         color: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[5],
     },
+
+    avatar: {
+        [theme.fn.smallerThan(400)]: {
+            display: 'none',
+        },
+    },
 }));
 
 interface ContactCardProps {
@@ -21,10 +27,9 @@ export default function ContactCard({ avatar, name, title, email, github }: Cont
         <Paper withBorder shadow="md" p={30} radius="md" mb="xl"
             sx={(theme) => ({
                 maxWidth: 400,
-                minWidth: 320,
             })}>
             <Group noWrap>
-                <Avatar src={avatar} size={94} radius="md" />
+                <Avatar className={classes.avatar} src={avatar} size={94} radius="md" />
                 <div>
                     <Text size="xs" sx={{ textTransform: 'uppercase' }} weight={700} color="dimmed">
                         {title}

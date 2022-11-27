@@ -62,6 +62,10 @@ const useStyles = createStyles((theme) => ({
         }),
     },
 
+    buttonText: {
+        color: theme.white,
+    },
+
     title: {
         color: theme.colorScheme === 'dark' ? theme.white : theme.black,
         [theme.fn.smallerThan('sm')]: {
@@ -175,22 +179,22 @@ export const NavBar = () => {
             <Header className={classes.navBarBox} height={60} px="md" >
                 <Group position="apart" sx={{ height: '100%' }}>
                     <Group sx={{ height: '100%' }} spacing={0}>
-                        <Link to='/'>
+                        <Link to=''>
                             <Title className={classes.title} order={4}>
                                 Null News
                             </Title>
                         </Link>
                     </Group>
                     <Group sx={{ height: '100%' }} spacing={0} className={classes.hiddenMobile}>
-                        <Link to="latest" className={classes.link}>
+                        <Link to="/latest" className={classes.link}>
                             Latest
                         </Link>
-                        <Link to="popular" className={classes.link}>
+                        <Link to="/popular" className={classes.link}>
                             Popular
                         </Link>
                         <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
                             <HoverCard.Target>
-                                <Link to="all" className={classes.link}>
+                                <Link to="/all" className={classes.link}>
                                     <Center inline>
                                         <Box component="span" mr={5}>
                                             More
@@ -213,24 +217,9 @@ export const NavBar = () => {
                                     mx="-md"
                                     color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'}
                                 />
-
                                 <SimpleGrid cols={2} spacing={0}>
                                     {links}
                                 </SimpleGrid>
-
-                                {/* <div className={classes.dropdownFooter}>
-                                    <Group position="apart">
-                                        <div>
-                                            <Text weight={500} size="sm">
-                                                Get started
-                                            </Text>
-                                            <Text size="xs" color="dimmed">
-                                                Their food sources have decreased, and their numbers
-                                            </Text>
-                                        </div>
-                                        <Button variant="default">Get started</Button>
-                                    </Group>
-                                </div> */}
                             </HoverCard.Dropdown>
                         </HoverCard>
                     </Group>
@@ -239,7 +228,7 @@ export const NavBar = () => {
                         <ActionIcon onClick={() => toggleColorScheme()}>
                             {theme.colorScheme === 'light' ? <IconSun /> : <IconMoon />}
                         </ActionIcon>
-                        <Link to="login"><Button>Sign up</Button></Link>
+                        <Link to="/login"><Button>Sign in</Button></Link>
                     </Group>
 
                     <Burger opened={drawerOpened} onClick={toggleDrawer} className={classes.hiddenDesktop} />
@@ -257,10 +246,10 @@ export const NavBar = () => {
             >
                 <ScrollArea sx={{ height: 'calc(100vh - 60px)' }} mx="-md">
                     <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
-                    <Link to="latest" className={classes.link}>
+                    <Link to="/latest" className={classes.link}>
                         Latest
                     </Link>
-                    <Link to="popular" className={classes.link}>
+                    <Link to="/popular" className={classes.link}>
                         Popular
                     </Link>
                     <UnstyledButton className={classes.link} onClick={toggleLinks}>
@@ -276,9 +265,13 @@ export const NavBar = () => {
 
                     <Group position="center" grow pb="xl" px="md">
                         <ActionIcon onClick={() => toggleColorScheme()}>
-                            {theme.colorScheme === 'light' ? <LightModeOutlined /> : <DarkModeOutlined />}
+                            {theme.colorScheme === 'light' ? <IconSun /> : <IconMoon />}
                         </ActionIcon>
-                        <Button>Sign up</Button>
+                        <Button>
+                            <Link to="/login" className={classes.buttonText}>
+                                Sign in
+                            </Link>
+                        </Button>
                     </Group>
                 </ScrollArea>
             </Drawer>

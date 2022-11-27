@@ -107,9 +107,18 @@ export function Login() {
 
     return (
         <Container size={420} my={40} >
-            <Title align="center" sx={(theme) => ({ fontFamily: `Greycliff CF, ${theme.fontFamily}`, fontWeight: 900 })}>
+            {type === 'login' && (
+                <Title align="center" sx={(theme) => ({ fontWeight: 900 })}>
                 Welcome back!
             </Title>
+            )}
+
+            {type === 'register' && (
+                <Title align="center" sx={(theme) => ({ fontWeight: 900 })}>
+                Welcome!
+            </Title>
+            )}
+            
             <Text color="dimmed" size="sm" align="center" mt={5}>
                 <Anchor
                     component="button"

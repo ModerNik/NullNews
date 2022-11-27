@@ -42,9 +42,9 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const links = [
-    { link: 'contact', label: 'Contact' },
-    { link: 'privacy', label: 'Privacy' },
-    { link: 'about', label: 'About' },
+    { link: '/contact', label: 'Contact' },
+    { link: '/privacy', label: 'Privacy' },
+    { link: '/about', label: 'About' },
 ];
 
 export const Footer = () => {
