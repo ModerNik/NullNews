@@ -5,8 +5,6 @@ import GlobalStyles from "./GlobalStyles";
 import AppRoutes from "./Routes";
 import { NavBar } from './components/NavBar'
 import { Footer } from './components/Footer'
-import { ForgotPassword } from './components/Login/ForgotPassword';
-import { Contact } from "./pages/Contact/Contact";
 
 import { useLocalStorage, useColorScheme } from "@mantine/hooks";
 import { NotificationsProvider, showNotification } from '@mantine/notifications';
@@ -26,7 +24,7 @@ function App() {
                 title: 'WORK IN PROGRESS',
                 message: 'This site is still under construction. Most features aren`t working yet. You can contact the developers at the Contact page.',
                 color: 'yellow',
-                icon: <IconAlertTriangle/>,
+                icon: <IconAlertTriangle />,
                 autoClose: 5000,
             },
         )
@@ -65,18 +63,31 @@ function App() {
     };
 
     return (
-        <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-            <MantineProvider theme={MainTheme} withGlobalStyles withNormalizeCSS>
-                <GlobalStyles />
-                <NotificationsProvider>
-                    <BrowserRouter basename={`/NullNews`}>
-                        <NavBar />
-                        <AppRoutes />
-                        <Footer />
-                    </BrowserRouter>
-                </NotificationsProvider>
-            </MantineProvider>
-        </ColorSchemeProvider>
+        <Box
+            sx={{
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                minHeight: '100vh',
+                justifyContent: 'center',
+                alignItems: 'center',
+            }}
+        >
+            <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
+                <MantineProvider theme={MainTheme} withGlobalStyles withNormalizeCSS>
+                    <GlobalStyles />
+                    <NotificationsProvider>
+                        <BrowserRouter basename={`/NullNews`}>
+                            <NavBar />
+                            <Box mb={8} sx={{ maxWidth: '1440px', width: '100%' }} >
+                                <AppRoutes />
+                            </Box>
+                            <Footer />
+                        </BrowserRouter>
+                    </NotificationsProvider>
+                </MantineProvider>
+            </ColorSchemeProvider>
+        </Box>
     )
 }
 

@@ -1,3 +1,4 @@
+import { Button } from "@mantine/core";
 import ArticleCard from "../../components/Article/ArticleCard"
 
 const ArticleCards = [{
@@ -15,12 +16,31 @@ const ArticleCards = [{
 
 export const Home = () => {
 
+    const postArticle = () => {
+        let data = new FormData();
+        let imagedata = 'ModerNik.png';
+        data.append("data", imagedata);
+
+        console.log(data);
+
+        fetch('http://localhost:3000/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            },
+            body: data
+        })
+            .then(response => response.json());
+
+    };
+
     const Articles = ArticleCards.map((item) => (
         <ArticleCard key={item.id} props={item} />
-        ));
+    ));
     return (
         <div>
             {Articles}
+            <Button onClick={postArticle} />
         </div>
     )
 }
